@@ -1,0 +1,123 @@
+# POST http://localhost:3009/jobs/post
+# Content-Type: application/json
+
+# {
+#     "company":"google",
+#     "role":"web developer",
+#     "salary":"2,00,000",
+#     "location":"Hyd",
+#     "id":"081"
+# }
+
+# GET http://localhost:3009/get/jobs
+
+# POST http://localhost:3009/desjobs/post
+# Content-Type: application/json
+
+# {
+#     "company":"google",
+#     "role":"web developer",
+#     "salary":"2,00,000",
+#     "location":"Hyd",
+#     "id":"090",
+#     "skills":"html, css, javascript",
+#     "des":"I am very good at html, css, javascript. I have done soo many projects on it on my own from scratch you can see it in my github account"
+# }
+
+# GET http://localhost:3009/jobdes/090
+
+# POST http://localhost:3009/apply/job
+# Content-Type: application/json
+
+# {
+#     "name":"anusha",
+#     "rollno":"160120732081",
+#     "email":"9848charan@gmail.com",
+#     "id":"2",
+#     "jobid":"081"
+# }
+
+# GET http://localhost:3009/applied/charan
+
+GET http://localhost:3009/notapplied/charan
+
+
+
+
+
+
+# POST http://localhost:3030/register
+# Content-Type: application/json
+
+# {
+#     "username":"anu",
+#     "password":"ANU"
+# }
+
+
+# POST http://localhost:3030/login
+# Content-Type: application/json
+
+# {
+#     "username":"anu",
+#     "password":"ANU"
+# }
+
+# POST http://localhost:3030/register/adminca
+# Content-Type: application/json
+
+# {
+#     "username":"anu",
+#     "password":"ANU"
+# }
+
+# POST http://localhost:3030/login/admin
+# Content-Type: application/json
+
+# {
+#     "username":"charan12",
+#     "password":"anusha12"
+# }
+
+# POST http://localhost:3030/todo/post
+# Content-Type: application/json
+
+# {
+#     "name":"anu",
+#     "id":"2",
+#     "heading":"CSS",
+#     "description":"css is good"
+# }
+
+# GET http://localhost:3030/todo/get/anu
+
+# DELETE http://localhost:3030/delete/todo/2
+
+# POST http://localhost:3030/jobs/post
+# Content-Type: application/json
+
+# {
+#     "id":"3",
+#     "jobrole":"web",
+#     "company":"google",
+#     "salary":"30,00,000",
+#     "closeson":"3 jan"
+# }
+
+# GET http://localhost:3030/jobs/get
+
+# DELETE http://localhost:3030/delete/jobs/3
+
+# POST http://localhost:3030/apply/post
+# Content-Type: application/json
+
+# {
+#     "rollno":"16",
+#     "name":"anu",
+#     "id":"2",
+#     "email":"9848"
+# }
+
+# GET http://localhost:3030/jobs/get/google/
+
+GET http://localhost:3030/apply/get/1/
