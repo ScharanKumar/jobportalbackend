@@ -1,13 +1,13 @@
-# POST http://localhost:3009/jobs/post
-# Content-Type: application/json
+POST http://localhost:3002/jobs/post
+Content-Type: application/json
 
-# {
-#     "company":"google",
-#     "role":"web developer",
-#     "salary":"2,00,000",
-#     "location":"Hyd",
-#     "id":"081"
-# }
+{
+    "company":"google",
+    "role":"web developer",
+    "salary":"2,00,000",
+    "location":"Hyd",
+    "id":"081"
+}
 
 # GET http://localhost:3009/get/jobs
 
