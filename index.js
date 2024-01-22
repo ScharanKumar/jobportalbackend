@@ -160,6 +160,14 @@ app.post('/jobs/post', async (request, response) => {
     const newUserId = booksArray.lastID;
       response.send(`Created new todo with ${newUserId}`);
   })
+
+  app.delete("/delete/jobs/:id",async(request,response)=>{
+        const {id}=request.params
+        const query=`delete from jobs
+        where id like '${id}';`
+        const res15 = await db.run(query)
+        response.send("job successfully deleted");
+      })
   
   app.get('/get/jobs', async (request, response) => {
     const getBooksQuery = `
@@ -180,6 +188,14 @@ app.post('/jobs/post', async (request, response) => {
     const newUserId = booksArray.lastID;
       response.send(`Created new todo with ${newUserId}`);
   })
+
+  app.delete("/delete/desjobs/:id",async(request,response)=>{
+    const {id}=request.params
+    const query=`delete from jobdes
+    where id like '${id}';`
+    const res16 = await db.run(query)
+    response.send("jobdes successfully deleted");
+  })
   
   app.get('/jobdes/:id', async (request, response) => {
     const {id}=request.params
@@ -196,7 +212,7 @@ app.post('/jobs/post', async (request, response) => {
   app.post('/apply/job', async (request, response) => {
     const {id,jobid,name,email,rollno}=request.body;
     const getBooksQuery = `
-      insert into applying(id,jobid,name,email,rollno)
+      insert into apply(id,jobid,name,email,rollno)
       values ('${id}','${jobid}','${name}','${email}','${rollno}')`;
     const booksArray = await db.run(getBooksQuery)
     const newUserId = booksArray.lastID;
@@ -211,7 +227,7 @@ app.post('/jobs/post', async (request, response) => {
       FROM
         jobs
       where not id in 
-      (select jobid from applying where name like '${name}')`;
+      (select jobid from apply where name like '${name}')`;
     const booksArray = await db.all(getBooksQuery)
     response.send(booksArray)
   })
@@ -224,7 +240,7 @@ app.post('/jobs/post', async (request, response) => {
       FROM
         jobs
       where id in 
-      (select jobid from applying where name like '${name}')`;
+      (select jobid from apply where name like '${name}')`;
     const booksArray = await db.all(getBooksQuery)
     response.send(booksArray)
   })
